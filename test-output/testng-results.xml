@@ -106,6 +106,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- closeResources -->
       </class> <!-- test.CorporatePageTest -->
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-30T14:15:52 IST" name="Default suite" finished-at="2023-01-30T14:16:17 IST" duration-ms="25367">
+    <groups>
+    </groups>
+    <test started-at="2023-01-30T14:15:52 IST" name="Default test" finished-at="2023-01-30T14:16:17 IST" duration-ms="25367">
+      <class name="test.DashboardPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.DashboardPageTest@4562e04d]" started-at="2023-01-30T14:15:52 IST" name="setup" finished-at="2023-01-30T14:16:09 IST" duration-ms="16735" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="export_n_branchcodemapping_button_test()[pri:0, instance:test.DashboardPageTest@4562e04d]" started-at="2023-01-30T14:16:09 IST" name="export_n_branchcodemapping_button_test" finished-at="2023-01-30T14:16:17 IST" duration-ms="8555" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- export_n_branchcodemapping_button_test -->
+      </class> <!-- test.DashboardPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

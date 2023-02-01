@@ -10,6 +10,12 @@
           <include name="init"/>
         </methods>
       </class> <!-- test.CorporatePageTest -->
+      <class name="test.DashboardPageTest">
+        <methods>
+          <include name="export_n_branchcodemapping_button_test"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- test.DashboardPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

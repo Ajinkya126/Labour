@@ -82,5 +82,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
   <testcase classname="test.UserPageTest" name="validateDeleteBtn_Cancel">
     <skipped/>
   </testcase> <!-- validateDeleteBtn_Cancel -->
+<testsuite hostname="DESKTOP-7MK4EF7" failures="0" tests="1" name="test.UserPageTest" time="1.647" errors="0" timestamp="2023-01-11T14:06:45 IST" skipped="0">
+  <testcase classname="test.UserPageTest" name="user_btn_click" time="1.647"/>
   <system-out/>
 </testsuite> <!-- test.UserPageTest -->

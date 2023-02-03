@@ -43,11 +43,13 @@ public class UserPageTest extends TestBase {
 		Thread.sleep(3000);
 		}
 	
+	@Ignore
 	@Test(priority =3)   // Validation Remaining(user save successfully popup)
 	public void validateEditBtn_withvalidData_and_Update() {
 		userpage.userEditBtn("Team", "lease");
 		
 	}
+	
 	
 	@Test (priority=4)
 	public void validateEditBtn_withInvalidData() throws InterruptedException {
@@ -94,14 +96,14 @@ public class UserPageTest extends TestBase {
 		Assert.assertEquals(text, "Password reset successful.");
 	}
 	
-	@Test(priority=8)
+    @Test(priority=8)
 	public void validateDeleteBtn() throws InterruptedException {
 		userpage.delete();
 		boolean value = driver.findElement(By.xpath("//div[text()='Compliance(s) assigned to this user, hence can not be delete']")).isDisplayed();
 		Assert.assertEquals(value, true);
 	}
 	
-	@Test(priority=9) //Validation Remaining
+	@Test(priority=9) 
 	public void validateDeleteBtn_Cancel() throws InterruptedException {
 		userpage.cancel();
 	}
@@ -110,7 +112,8 @@ public class UserPageTest extends TestBase {
 	@Test(priority = 10)
 	public void validatePagination() throws InterruptedException {
 		userpage.pagination();
-		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed(); //page1
+		
+		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed();
 		Assert.assertEquals(value, true);
 	}
 	

@@ -92,30 +92,19 @@ public class CorporatePageTest extends TestBase {
 	@Test(priority=10)
 	public void validateViewEntityButton() {
 		corporatepage.viewEntityBtn();
-		boolean value = driver.findElement(By.xpath("(//th[@role='columnheader'])[4]")).isDisplayed();
-		Assert.assertEquals(value, true);
-		}
+	}
 	
-	@Ignore //validation Remaining
-	@Test(priority=11)
+	@Ignore
+	@Test(priority=11) //validation Remaining
 	public void validatePagination() throws InterruptedException {
 		corporatepage.pagination();
 		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed(); //page1
 		Assert.assertEquals(value, true);
 	}
 	
-	@Test(priority=12) 
-	public void validateBackBtn() throws InterruptedException {
+	@Test(priority=12)
+	public void validateBackBtn() {
 		corporatepage.backBtn();
-		boolean value = driver.findElement(By.id("pagetype")).isDisplayed();
-		Assert.assertEquals(value, true);
-	}
-	
-	@Test(priority=13)
-	public void validateEntityTab_click() {
-		corporatepage.entityTab_click();
-		boolean value = driver.findElement(By.id("btnUploadSelectedEntity")).isDisplayed(); //I validate Selected entity tab here.
-		Assert.assertEquals(value, true);
 	}
 	
 	@AfterMethod

@@ -10,9 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -23,14 +20,12 @@ public class TestBase {
 	public TestBase() {
 		prop = new Properties();
 		try {
-		//	FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\eclipse-workspace\\labour_1\\src\\main\\java\\env_data\\config.properties");
-			FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\Documents\\Labour Project\\Labour\\src\\main\\java\\env_data\\config.properties");
+			FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\eclipse-workspace\\labour_1\\src\\main\\java\\env_data\\config.properties");
 			prop.load(file);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public static void initialization() {
@@ -62,6 +57,9 @@ public class TestBase {
 	//	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(prop.getProperty("website"));
-		}
+		
+
+ }
+
 
 }

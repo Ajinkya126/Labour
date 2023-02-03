@@ -104,13 +104,8 @@ public class CorporatePage extends TestBase {
  // WebElement custdelOKbtn;
     
     //View Entity Arrow(->)
-    @FindBy(xpath = "//tbody/tr[1]/td[7]/a[3]")
+    @FindBy(xpath = "(//a[@role='button'])[3]")
     WebElement entityarrow;
-    
-    //Entity tab click
-    @FindBy(id = "ContentPlaceHolder1_lnkTabEntity")
-    WebElement entitytab;
-    
 		
 	public void custumerDetails(String nam,String buyernam,String buyno,String mail,String panno,String tanno, String add) throws InterruptedException { //
 		addnewbtn.click();
@@ -211,15 +206,11 @@ public class CorporatePage extends TestBase {
 		userpage.pagination();
 	}
 	    
-	public void backBtn() throws InterruptedException {
+	public void backBtn() {
 		userpage = new UserPage();
 		userpage.backBtn();
 	}
-	
-	public void entityTab_click() {
-		entitytab.click();
-	}
-	
+	    
 	public CorporatePage() {
 		PageFactory.initElements(driver, this);
 	}

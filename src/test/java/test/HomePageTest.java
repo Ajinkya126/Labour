@@ -24,11 +24,13 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 	
+    
 	@Test (priority = 3)
 	public void validateLogoutTest() {
 		homepage.clickOnlogout();
 		Assert.assertEquals(driver.getTitle(), prop.getProperty("logoutTestTitle"));
 	}
+	
 	
 	@Test(priority = 1)
 	public void validateUserBtn() throws InterruptedException {
@@ -38,7 +40,7 @@ public class HomePageTest extends TestBase {
 	}
 	
 	
-	@Test(priority = 2)  //tc_LP = 24
+	@Test(priority = 2)  //tc_LP = 24 __Execute while page stuck
 	public void validateCorporateBtn() throws InterruptedException {
 		homepage.click_on_corporate_btn();
 		boolean value = driver.findElement(By.id("ContentPlaceHolder1_lnkTabCustomer")).isDisplayed();

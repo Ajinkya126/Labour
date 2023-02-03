@@ -3,6 +3,7 @@ package test;
 import java.time.Duration;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -24,7 +25,7 @@ public class EntitiesPageTest extends TestBase{
 		loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
-	@Ignore
+	
 	@Test(priority = 1)
 	public void entities_search_test() throws InterruptedException {
 		entities_page = new EntitiesPage();
@@ -44,14 +45,12 @@ public class EntitiesPageTest extends TestBase{
 		entities_page.entity_exceldowld();
 	}
 	
-	@Ignore
 	@Test(priority = 2)
 	public void logo_test() throws InterruptedException{
 		entities_page = new EntitiesPage();
 		entities_page.logo();
 	}
 	
-	@Ignore
 	@Test(priority = 3)
 	public void logout_action_test() throws InterruptedException {
 		entities_page = new EntitiesPage();
@@ -73,10 +72,12 @@ public class EntitiesPageTest extends TestBase{
 		Assert.assertEquals(dashboard_title, prop.getProperty("dashboard_page_title"));
 	}
 	
-	/*@AfterMethod
-	public void closewindow() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.close();
-	}*/
+	@AfterMethod
+	public void closeResources() {
+		
+    //  public void closewindow() throws InterruptedException {
+	//	Thread.sleep(2000);
+		driver.quit();
+	}
 
 }

@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.CorporatePageTest">
+      <class name="test.LoginPageTest">
         <methods>
-          <include name="validateViewEntityButton"/>
+          <include name="validateAccountLockedBtn"/>
           <include name="closeResources"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- test.CorporatePageTest -->
-      <class name="test.DashboardPageTest">
-        <methods>
-          <include name="export_n_branchcodemapping_button_test"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- test.DashboardPageTest -->
+      </class> <!-- test.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -23,16 +23,14 @@ public class TestBase {
 	public TestBase() {
 		prop = new Properties();
 		try {
-			FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\eclipse-workspace\\labour_1\\src\\main\\java\\env_data\\config.properties");
+		//	FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\eclipse-workspace\\labour_1\\src\\main\\java\\env_data\\config.properties");
+			FileInputStream file = new FileInputStream("C:\\Users\\Ajinkya Kasare\\Documents\\Labour Project\\Labour\\src\\main\\java\\env_data\\config.properties");
 			prop.load(file);
 		}
 		catch (Exception e) {
-			FileInputStream file = new FileInputStream("C:\\Users\\Madhu Kumbhar\\eclipse-workspace\\LabourCompliance\\src\\main\\java\\environment_data\\config.properties");
-			prop.load(file);
-		}
-		catch(Exception e){
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public static void initialization() {
@@ -64,15 +62,6 @@ public class TestBase {
 	//	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(prop.getProperty("website"));
-		
-
- }
-
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		driver.get(prop.getProperty("url"));
-	}
+		}
 
 }

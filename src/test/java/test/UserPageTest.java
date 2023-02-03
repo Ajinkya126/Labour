@@ -27,7 +27,6 @@ public class UserPageTest extends TestBase {
 		userpage = homepage.click_on_user();
 	}
 	
-	@Ignore
 	@Test (priority=1)
 	public void validate_save_btn_with_2_mandetory_field() throws InterruptedException {
 		userpage.userSaveBtn(prop.getProperty("firstName"), prop.getProperty("lastName"));
@@ -36,7 +35,6 @@ public class UserPageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 	
-	@Ignore
 	@Test (priority=2)
 	public void validate_save_btn_with_blank_field() throws InterruptedException {
 		userpage.userSaveBtn(" ", " ");
@@ -45,15 +43,12 @@ public class UserPageTest extends TestBase {
 		Thread.sleep(3000);
 		}
 	
-	@Ignore
 	@Test(priority =3)   // Validation Remaining(user save successfully popup)
 	public void validateEditBtn_withvalidData_and_Update() {
 		userpage.userEditBtn("Team", "lease");
 		
 	}
 	
-	
-	@Ignore
 	@Test (priority=4)
 	public void validateEditBtn_withInvalidData() throws InterruptedException {
 		userpage.userEditBtn("123", "567");
@@ -62,7 +57,6 @@ public class UserPageTest extends TestBase {
 		Thread.sleep(3000);
 		}
 	
-	@Ignore
 	@Test (priority=5) 
 	public void validateDropDown() throws InterruptedException{
 		userpage.searchBar();
@@ -82,7 +76,6 @@ public class UserPageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 */
-	@Ignore
 	@Test(priority=6)
 	public void validateSearchBarClrBtn() throws InterruptedException {
 		userpage.clearBtn();
@@ -90,7 +83,6 @@ public class UserPageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 	
-    @Ignore
 	@Test(priority=7)
 	public void validateResetPwd() throws InterruptedException {
 		userpage.reset();
@@ -102,7 +94,6 @@ public class UserPageTest extends TestBase {
 		Assert.assertEquals(text, "Password reset successful.");
 	}
 	
-    @Ignore
 	@Test(priority=8)
 	public void validateDeleteBtn() throws InterruptedException {
 		userpage.delete();
@@ -110,18 +101,16 @@ public class UserPageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 	
-    @Ignore
 	@Test(priority=9) //Validation Remaining
 	public void validateDeleteBtn_Cancel() throws InterruptedException {
 		userpage.cancel();
 	}
 	
-    @Ignore
+	@Ignore //validation Remaining
 	@Test(priority = 10)
 	public void validatePagination() throws InterruptedException {
 		userpage.pagination();
-		
-		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed();
+		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed(); //page1
 		Assert.assertEquals(value, true);
 	}
 	
@@ -129,26 +118,13 @@ public class UserPageTest extends TestBase {
 	public void validateBackBtn() {
 		userpage.backBtn();
 		boolean value = driver.findElement(By.xpath("//h1[text()='Entities']")).isDisplayed();
-		Assert.assertEquals(value, false);
+		Assert.assertEquals(value, true);
 	}
 	
 	
 	@AfterMethod
 	public void closeResources() {
 		driver.close();
-import org.testng.annotations.Test;
-
-import distributor.loginpage.UserPage;
-import testbase.TestBase;
-
-public class UserPageTest extends TestBase{
-	
-	UserPage up;
-	
-	@Test
-	public void user_btn_click() {
-		up = new UserPage();
-		up.userbtn_action();
 	}
 
 }

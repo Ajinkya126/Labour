@@ -25,14 +25,12 @@ public class CorporatePageTest extends TestBase {
 		corporatepage = homepage.click_on_corporate_btn();
   }
 	
-	@Ignore
 	@Test(priority = 1)   // Dropdown section remaining(City) and Validation Remaining
 	public void validateAllField() throws InterruptedException {
 	//	corporatepage.custumerDetails("Royal");
 		corporatepage.custumerDetails("Royal", "Harshal", "9876543210", "harshal@gmail.com", "87654321237645", "345678909876", "Pune");
 	}
 	
-	@Ignore
 	@Test(priority = 2)
 	public void validateSavebtnWith2MandField() throws InterruptedException {
 		corporatepage.clickOnSaveBtn("Royal", "Sagar");
@@ -41,7 +39,6 @@ public class CorporatePageTest extends TestBase {
 	 	Assert.assertEquals(value, true);
 	}
 	
-	@Ignore
 	@Test(priority = 4)
 	public void validateEditBtn_ValidData() throws InterruptedException {
 		corporatepage.editBtn("sumit", "sumit@gmail.com");
@@ -50,7 +47,6 @@ public class CorporatePageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 	
-	@Ignore
 	@Test(priority=5)
 	public void validateEditBtn_InvalidData() throws InterruptedException {
 		corporatepage.editBtn("12@123anu", "karanjohar");
@@ -59,7 +55,6 @@ public class CorporatePageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 	
-	@Ignore
 	@Test(priority=6)
 	public void validateCustumerNameDD() throws InterruptedException {
 		corporatepage.custnamedd();
@@ -68,7 +63,6 @@ public class CorporatePageTest extends TestBase {
 		Assert.assertEquals(value, true);
 		}
 	
-	@Ignore
 	@Test(priority=7)
 	public void validateCustClearButton() throws InterruptedException {
 		corporatepage.custClearBtn();
@@ -77,7 +71,6 @@ public class CorporatePageTest extends TestBase {
 		Assert.assertEquals(value, true);
 	}
 	
-	@Ignore
     @Test(priority=8)   
 	public void validateCustDeleteButton_OK() throws InterruptedException {
 		corporatepage.custDeleteBtn_OK();
@@ -87,7 +80,6 @@ public class CorporatePageTest extends TestBase {
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	}
 	
-    
 	@Test(priority=9)  //Validation is same for priority 8 & 9
 	public void validateCustDeleteButton_Cancel() throws InterruptedException {
 		corporatepage.custDeleteBtn_Cancel();
@@ -100,11 +92,35 @@ public class CorporatePageTest extends TestBase {
 	@Test(priority=10)
 	public void validateViewEntityButton() {
 		corporatepage.viewEntityBtn();
+		boolean value = driver.findElement(By.xpath("(//th[@role='columnheader'])[4]")).isDisplayed();
+		Assert.assertEquals(value, true);
+		}
+	
+	@Ignore //validation Remaining
+	@Test(priority=11)
+	public void validatePagination() throws InterruptedException {
+		corporatepage.pagination();
+		boolean value =driver.findElement(By.cssSelector("span[class='k-state-selected']")).isDisplayed(); //page1
+		Assert.assertEquals(value, true);
+	}
+	
+	@Test(priority=12) 
+	public void validateBackBtn() throws InterruptedException {
+		corporatepage.backBtn();
+		boolean value = driver.findElement(By.id("pagetype")).isDisplayed();
+		Assert.assertEquals(value, true);
+	}
+	
+	@Test(priority=13)
+	public void validateEntityTab_click() {
+		corporatepage.entityTab_click();
+		boolean value = driver.findElement(By.id("btnUploadSelectedEntity")).isDisplayed(); //I validate Selected entity tab here.
+		Assert.assertEquals(value, true);
 	}
 	
 	@AfterMethod
 	public void closeResources() {
-	//	driver.close();
+		driver.close();
 	}
 	
 }

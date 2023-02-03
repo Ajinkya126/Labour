@@ -24,14 +24,12 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 	
-    @Ignore
 	@Test (priority = 3)
 	public void validateLogoutTest() {
 		homepage.clickOnlogout();
 		Assert.assertEquals(driver.getTitle(), prop.getProperty("logoutTestTitle"));
 	}
 	
-	@Ignore
 	@Test(priority = 1)
 	public void validateUserBtn() throws InterruptedException {
 		homepage.click_on_user();

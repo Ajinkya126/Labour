@@ -16,6 +16,7 @@ import util.Utility;
 
 public class CorporatePage extends TestBase {
 	CorporatePage corporatepage;
+	UserPage userpage;
 
 	@FindBy(id = "btnAdd")   
 	WebElement addnewbtn; 
@@ -103,8 +104,13 @@ public class CorporatePage extends TestBase {
  // WebElement custdelOKbtn;
     
     //View Entity Arrow(->)
-    @FindBy(xpath = "//a[@class='k-button k-button-icontext k-grid-arrow-right k-grid-proceed k-state-border-down']")
+    @FindBy(xpath = "//tbody/tr[1]/td[7]/a[3]")
     WebElement entityarrow;
+    
+    //Entity tab click
+    @FindBy(id = "ContentPlaceHolder1_lnkTabEntity")
+    WebElement entitytab;
+    
 		
 	public void custumerDetails(String nam,String buyernam,String buyno,String mail,String panno,String tanno, String add) throws InterruptedException { //
 		addnewbtn.click();
@@ -199,7 +205,21 @@ public class CorporatePage extends TestBase {
 	public void viewEntityBtn() {
 		entityarrow.click();
 	}
+	
+	public void pagination() throws InterruptedException {  //Pagination element same for user page
+		userpage = new UserPage();
+		userpage.pagination();
+	}
 	    
+	public void backBtn() throws InterruptedException {
+		userpage = new UserPage();
+		userpage.backBtn();
+	}
+	
+	public void entityTab_click() {
+		entitytab.click();
+	}
+	
 	public CorporatePage() {
 		PageFactory.initElements(driver, this);
 	}

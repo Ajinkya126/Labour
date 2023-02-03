@@ -3,13 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.CorporateEntityPageTest">
+      <class name="test.CorporatePageTest">
         <methods>
-          <include name="closewindow"/>
-          <include name="corporate_nsearch_test"/>
-          <include name="setup"/>
+          <include name="validateViewEntityButton"/>
+          <include name="closeResources"/>
+          <include name="validateEntityTab_click"/>
+          <include name="init"/>
+          <include name="validateBackBtn"/>
         </methods>
-      </class> <!-- test.CorporateEntityPageTest -->
+      </class> <!-- test.CorporatePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

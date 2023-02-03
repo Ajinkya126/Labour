@@ -60,7 +60,7 @@ public class UserPage extends TestBase {
 	WebElement cancelbtn;
 	
 	// Pagination
-	@FindBy(xpath = "//a[normalize-space()='2']")
+	@FindBy(xpath = "//a[normalize-space()='2']") 
 	WebElement pagenave2;
 	@FindBy(xpath = "//a[normalize-space()='3']")
 	WebElement pagenave3;

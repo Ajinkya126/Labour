@@ -104,7 +104,7 @@ public class DashboardPageTest extends TestBase{
 	
 	@AfterMethod
 	public void closeResources() {
-		driver.close();
+		driver.quit();
 	}
 
 	

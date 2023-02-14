@@ -4,30 +4,19 @@
   <listeners>
     <listener class-name="extentReportListner.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
-      <class name="test.CorporatePageTest">
+      <class name="test.LoginPageTest">
         <methods>
+          <include name="validateLoginHelp"/>
+          <include name="validateLoginWithInvUn"/>
+          <include name="validateLoginWithValidCre"/>
+          <include name="validateLoginWithInvPass"/>
           <include name="closeResources"/>
-          <include name="validateCustumerNameDD"/>
-          <include name="init"/>
+          <include name="setup"/>
+          <include name="validateLoginWithInvUNandPWD"/>
         </methods>
-      </class> <!-- test.CorporatePageTest -->
-      <class name="test.UserPageTest">
-        <methods>
-          <include name="validateResetPwd"/>
-          <include name="validateDropDown"/>
-          <include name="closeResources"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- test.UserPageTest -->
-      <class name="test.HomePageTest">
-        <methods>
-          <include name="init"/>
-          <include name="validateLogoutTest"/>
-          <include name="closeResources"/>
-        </methods>
-      </class> <!-- test.HomePageTest -->
+      </class> <!-- test.LoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -10,9 +10,12 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="test.LoginPageTest"/>
-<!--  <class name="test.HomePageTest"/>     
+ <!-- <class name="test.HomePageTest"/>     
       <class name="test.UserPageTest"/>
-      <class name="test.CorporatePageTest"/>  --> 
+      <class name="test.CorporatePageTest"/>
+      <class name="test.CorporateEntityPageTest"/>
+      <class name="test.EntitiesPageTest"/>
+      <class name="test.DashboardPageTest"/>  --> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

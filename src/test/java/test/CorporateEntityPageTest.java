@@ -51,8 +51,8 @@ public class CorporateEntityPageTest extends TestBase {
 		Assert.assertEquals(entities_page_title, prop.getProperty("entity_page_title"));
 	}
 	
-	/*@AfterMethod
+	@AfterMethod
 	public void closewindow(){
 		driver.close();
-	}*/
+	}
 }
